@@ -1,26 +1,10 @@
-mod more1;
-
-fn add_nums(a: i64, b: i64) -> i64 {
-    // Add two numbers together and return the result
-    return a + b;
-}
-
-fn func_ptrs() {
-    const ROFL: i64 = 99;
-    let t = ROFL + 1;
-    let xray = add_nums(32, 41);
-    let alias1 = add_nums;
-    let alias2: fn(i64, i64) -> i64 = add_nums;
-    let t2 = alias1(3, 4);
-
-    println!("{0} {1} {2} {3}", t, xray, t2, alias2(3, 4));
-}
+mod control_flows;
+mod basics;
 
 fn main() {
     // This is a comment
     let x = 3;
     let y = 4;
-
     let z = x + y;
 
     let s1 = "Hello there";
@@ -34,7 +18,7 @@ fn main() {
     println!("{0} {1}", s1, s2);
     println!("{:?}", [s1, s2]);
 
-    func_ptrs();
+    basics::func_ptrs();
 
     println!("{0}", u8::min_value());
 
@@ -89,5 +73,15 @@ fn main() {
     };
     println!("Current team size : {}", time_size_in_text);
 
-    more1::run_more_one();
+    control_flows::matches_one();
+
+    control_flows::matches_two(true);
+
+    control_flows::grade_papers(46, 18);
+
+    control_flows::while_examples();
+
+    control_flows::loop_examples();
+
+    control_flows::for_examples();
 }
